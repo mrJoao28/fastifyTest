@@ -12,7 +12,7 @@ export async function createUser(input:any){
 
 export async function allUsers(){
     const users = await usersCollection.find()
-    return users
+    return users.toArray()
 }
 
 export async function oneUser(id:ObjectId){
