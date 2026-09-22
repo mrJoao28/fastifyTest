@@ -1,4 +1,4 @@
-import { FastifyInstance, type FastifySchema } from "fastify";
+import { type FastifyInstance, type FastifySchema } from "fastify";
 import { newUser, todosUsers, umUser, atualizaUser, delUser } from "../controller/user.js";
 
 const idParamsSchema = {
@@ -27,7 +27,7 @@ const getOrDeleteSchema: FastifySchema = { params: idParamsSchema };
 const postSchema: FastifySchema = { body: userBodySchema };
 const putSchema: FastifySchema = { params: idParamsSchema, body: userBodySchema };
 
-async function userRoutes(server: FastifyInstance) {
+export async function userRoutes(server: FastifyInstance) {
   server.get("/allUsers", todosUsers);
 
   server.get("/user/:id", { schema: getOrDeleteSchema }, umUser);
@@ -39,4 +39,3 @@ async function userRoutes(server: FastifyInstance) {
   server.put("/updateUser/:id", { schema: putSchema }, atualizaUser);
 }
 
-export default userRoutes;

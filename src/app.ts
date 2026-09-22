@@ -1,6 +1,7 @@
 import Fastify from "fastify"
 import {userRoutes} from "./routes/user_route.js"
 
+
 const app = Fastify({
     logger:true
 })

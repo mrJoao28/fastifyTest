@@ -1,6 +1,4 @@
-import { FastifyReply , FastifyRequest } from "fastify";
-import { verifyPassword } from "../utils/hash.js";
-import { CreateUserInput, LoginInput } from "../models/user_schema.js";
+import type { FastifyReply , FastifyRequest } from "fastify";
 import { createUser , allUsers , oneUser ,updateUser ,deleteUser } from "../services/user_services.js";
 import type { ObjectId } from "mongodb";
 import type { User } from "../data/db.js";
